@@ -77,7 +77,7 @@ function initButtons() {
 }
 
 function onPlayerLoaded() {
-  DZ.player.playPlaylist(4939696564);
+  DZ.player.playPlaylist(890674641);
   DZ.player.setShuffle(true);
 
   document.querySelector(".player").style.opacity = 1;
