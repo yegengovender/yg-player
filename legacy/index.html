@@ -1,0 +1,137 @@
+<style>
+  @keyframes zoomIn {
+    from {
+      background-size: auto 100%;
+    }
+    to {
+      background-size: auto 150%;
+    }
+  }
+  .player {
+    z-index: 10;
+    position: absolute;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 5s;
+    background-color: rgba(117, 117, 117, 0.7);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    box-shadow: black 0 0 25px -5px;
+    font-family: sans-serif;
+    color: antiquewhite;
+  }
+  .album-art {
+    height: 190px;
+    width: 190px;
+    align-self: center;
+    box-shadow: black 0px 0px 25px -5px;
+    margin: 10px 0 20px;
+  }
+  .controls > button {
+    border-radius: 50%;
+    text-align: center;
+    background-color: #c2c1ff;
+    color: #636363;
+    border-width: 0;
+    margin: 6px;
+    box-shadow: black 0 0 25px -5px;
+  }
+  .controls > button.prev,
+  .controls > button.next {
+    height: 50px;
+    width: 50px;
+    font-size: 1em;
+  }
+  .controls > button.play-pause {
+    height: 60px;
+    width: 60px;
+    font-size: 1.4em;
+  }
+  .controls > button.play-pause > i.play-icon {
+    display: none;
+  }
+  .controls > button.play-pause > i.pause-icon {
+    display: block;
+  }
+  .controls > button.play-pause.player-paused > i.play-icon {
+    display: block;
+  }
+  .controls > button.play-pause.player-paused > i.pause-icon {
+    display: none;
+  }
+  .img1 {
+    animation: zoomIn 20s linear 0s infinite;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: auto 70%;
+    background-color: black;
+    transition: background-image 7s;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .banner {
+    position: absolute;
+    height: 100px;
+    width: 540px;
+    bottom: 15px;
+    right: 15px;
+    background-size: contain;
+    border-radius: 5px;
+  }
+</style>
+
+<script
+  src="https://kit.fontawesome.com/939bd7d03e.js"
+  crossorigin="anonymous"
+></script>
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"
+></script>
+
+<script
+  type="text/javascript"
+  src="https://e-cdns-files.dzcdn.net/js/min/dz.js"
+></script>
+
+<script type="text/javascript" src="main.js"></script>
+
+<body>
+  <div id="dz-root"></div>
+  <div class="player">
+    <div class="album-art"></div>
+    <div class="controls">
+      <button class="prev">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button class="play-pause player-paused">
+        <i class="fas fa-play play-icon"></i>
+        <i class="fas fa-pause pause-icon"></i>
+      </button>
+      <button class="next">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+
+    <h3 class="track-name"></h3>
+    <h4 class="artist"></h4>
+  </div>
+
+  <div class="slideshow">
+    <div class="img1"></div>
+  </div>
+
+  <div class="banner"></div>
+
+  : ,
+</body>
