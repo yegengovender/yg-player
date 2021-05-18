@@ -1,0 +1,9 @@
+{
+  "name": "yg-player",
+  "version": "0.0.2",
+  "description": "music player connect to deezer api",
+  "main": "index.js",
+  "repository": "git@github.com:mannuelf/yg-player.git",
+  "author": "Mannuel Ferreira <mannuel.ferreira@gmail.com>",
+  "license": "MIT"
+}
