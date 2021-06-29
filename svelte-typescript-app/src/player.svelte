@@ -1,6 +1,22 @@
-<script>
-  import Controls from './controls.svelte';
+<script lang="ts">
+  import AlbumArt from "./albumArt.svelte";
+  import Controls from "./controls.svelte";
+  import type { Track } from "./models/Track";
+
+  export let track: Track;
+  export let trackPlaying: boolean;
 </script>
+
+<div class="player">
+{#if track && track.artist && track.album}
+  <AlbumArt cover={track?.album.cover} />
+  <Controls on:playpause_click on:back_click on:forward_click bind:trackPlaying/>
+
+  <h3 class="track-name">{track?.title}</h3>
+  <h4 class="artist">{track?.artist.name}</h4>
+{/if}
+</div>
+
 <style>
   .player {
     z-index: 10;
@@ -18,22 +34,4 @@
     font-family: sans-serif;
     color: antiquewhite;
   }
-  .album-art {
-    height: 190px;
-    width: 190px;
-    align-self: center;
-    box-shadow: black 0px 0px 25px -5px;
-    margin: 10px 0 20px;
-    background-position: center;
-    background-size: cover;
-  }
 </style>
-
-<div class="player">
-  <div class="album-art" />
-
-  <Controls />
-  
-  <h3 class="track-name" />
-  <h4 class="artist" />
-</div>

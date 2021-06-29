@@ -43,7 +43,10 @@ export default {
 			preprocess: sveltePreprocess({ sourceMap: !production }),
 			compilerOptions: {
 				// enable run-time checks when not in production
-				dev: !production
+				dev: !production,
+				css: css => {
+					css.write('public/bundle.css')
+				}
 			}
 		}),
 		// we'll extract any component CSS out into
